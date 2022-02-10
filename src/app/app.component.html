@@ -1,8 +1,13 @@
 <div class="main-area">
     <ng-container *ngFor="let c of comments">
         <div class="container-comment">
-            <app-comment-container [comment]="c"></app-comment-container>
+            <app-comment-container 
+                [comment]="c"
+                (reply)="showReplyForm(c)"></app-comment-container>
         </div>
+        <app-comment-form [currentUser]="currentUser" 
+            *ngIf="c.showReplyForm"></app-comment-form>
+        
         <ng-container *ngIf="c.replies">
             <div class="container-reply" *ngFor="let r of c.replies">
                 <app-comment-container 
@@ -10,8 +15,8 @@
                     [isUser]="currentUser.username === r.user.username ? true : false">
                 </app-comment-container>
             </div>
-            
         </ng-container>
+        
     </ng-container>
     
     <app-comment-form [currentUser]="currentUser"></app-comment-form>

@@ -22,8 +22,13 @@ export class AppComponent {
     json.getComments()
       .subscribe(jsonData => {
         this.comments = jsonData.comments;
+        this.comments.forEach(comment => comment.showReplyForm = false);
         this.currentUser = jsonData.currentUser;
-        console.log(jsonData)
+        
       })
+  }
+
+  showReplyForm(comment: Comment) {
+    comment.showReplyForm = true;
   }
 }

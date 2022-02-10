@@ -18,15 +18,21 @@
       <p>1 month ago</p>
     </div>
     <div class="actions">
-      <ng-container *ngIf="!isUser else edit">
-        <img src="../../assets/images/icon-reply.svg" alt="" class="reply-icon">
-        <p class="reply">Reply</p>
+      <ng-container *ngIf="!isUser else edit" >
+        <div (click)="showReplyForm()" class="item-wrapper">
+          <img src="../../assets/images/icon-reply.svg" alt="" class="reply-icon">
+          <p class="reply">Reply</p>
+        </div>
       </ng-container>
       <ng-template #edit>
-        <img src="../../assets/images/icon-delete.svg" alt="" class="delete-icon">
+        <div class="item-wrapper">
+          <img src="../../assets/images/icon-delete.svg" alt="" class="delete-icon">
         <p class="delete">Delete</p>
-        <img src="../../assets/images/icon-edit.svg" alt="" class="edit-icon">
+        </div>
+        <div class="item-wrapper">
+          <img src="../../assets/images/icon-edit.svg" alt="" class="edit-icon">
         <p class="edit">Edit</p>
+        </div>
       </ng-template>
       
     </div>

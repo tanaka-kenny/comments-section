@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-comment-container',
@@ -8,11 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CommentContainerComponent implements OnInit {
   @Input() comment: Comment | any;
   @Input() isUser = false;
+  @Output() reply: EventEmitter<boolean>;
 
   constructor() { 
+    this.reply = new EventEmitter<boolean>();
   }
 
   ngOnInit(): void {
+  }
+
+  showReplyForm() {
+    this.reply.emit(true);
   }
 
 }
@@ -29,5 +35,6 @@ export interface Comment {
       webp: string;
     }
     username: string;
-  }
+  },
+  showReplyForm: boolean;
 }
