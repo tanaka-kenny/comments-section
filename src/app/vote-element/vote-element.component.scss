@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+
+.upvote {
+    position: relative;
+    width: 90px;
+
+    .vote {
+        position: absolute;
+        width: 35px;
+        background-color: #eaecf1;
+        left: 30px;
+        top: 12px;
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        p {
+            text-align: center;
+        }
+        
+        img {
+            margin-left: 12px;
+        }
+    }
+}
