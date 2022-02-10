@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { JsonDataService } from './services/json-data.service';
 import { Comment } from './comment-container/comment-container.component'
+import { CurrentUser } from './comment-form/comment-form.component';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,19 @@ import { Comment } from './comment-container/comment-container.component'
 export class AppComponent {
   title = 'comments-section';
   comments: Comment[] = [];
+  currentUser: CurrentUser = {
+    image: {
+      png: ''
+    },
+    username: ''
+  };
 
   constructor(private json: JsonDataService) {
     json.getComments()
       .subscribe(jsonData => {
         this.comments = jsonData.comments;
-        console.log(this.comments)
+        this.currentUser = jsonData.currentUser;
+        console.log(jsonData)
       })
   }
 }

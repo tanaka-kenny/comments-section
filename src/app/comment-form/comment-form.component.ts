@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-comment-form',
@@ -6,10 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-form.component.scss']
 })
 export class CommentFormComponent implements OnInit {
+  @Input() currentUser: CurrentUser;
 
-  constructor() { }
+  constructor() {
+    this.currentUser = {
+      image: {
+        png: ''
+      },
+      username: ''
+    }
+   }
 
   ngOnInit(): void {
   }
 
+}
+
+export interface CurrentUser {
+  image: {
+    png: string;
+    webp?: string;
+  },
+  username: string;
 }
