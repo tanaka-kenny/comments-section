@@ -8,7 +8,7 @@ import { JsonDataService } from './services/json-data.service';
 })
 export class AppComponent {
   title = 'comments-section';
-  comments = [];
+  comments: Comment[] = [];
 
   constructor(private json: JsonDataService) {
     json.getComments()
