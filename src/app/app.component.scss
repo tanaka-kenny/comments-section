@@ -1,0 +1,24 @@
+@import '../styles.scss';
+
+.main-area {
+   display: grid;
+   justify-content: center;
+}
+.container {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 7px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.container-comment {
+    width: 700px;
+    @extend .container;
+}
+
+.container-reply {
+    position: relative;
+    left: 98px;
+    width: 600px;
+    @extend .container;
+}

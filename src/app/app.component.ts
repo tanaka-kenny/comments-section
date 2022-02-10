@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { JsonDataService } from './services/json-data.service';
+import { Comment } from './comment-container/comment-container.component'
 
 @Component({
   selector: 'app-root',
