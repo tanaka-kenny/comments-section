@@ -1,0 +1,39 @@
+@import '../../styles.scss';
+
+.elements {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+    position: relative;
+    bottom: 10px;
+}
+
+.comment {
+    width: 489px;
+    height: 88px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 15px;
+    position: relative;
+    top: 5px;
+    border: .1px solid $grayish-blue;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 85px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: $moderate-blue;
+    color: $white;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    bottom: 24px;
+}

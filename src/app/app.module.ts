@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CommentContainerComponent } from './comment-container/comment-container.component';
 import { VoteElementComponent } from './vote-element/vote-element.component';
 import { ContainerComponent } from './container/container.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CommentContainerComponent,
     VoteElementComponent,
-    ContainerComponent
+    ContainerComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule
