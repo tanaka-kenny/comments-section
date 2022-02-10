@@ -14,6 +14,7 @@
     display: flex;
     margin: 0;
     padding: 0;
+    position: relative;
     
 }
 
@@ -35,8 +36,8 @@
 }
 
 .reply {
-    position: relative;
-    left: 295px;
+    position: absolute;
+    right: 15px;
     display: flex;
     align-items: center;
     
