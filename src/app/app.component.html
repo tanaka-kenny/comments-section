@@ -5,7 +5,9 @@
         </div>
         <ng-container *ngIf="c.replies">
             <div class="container-reply" *ngFor="let r of c.replies">
-                <app-comment-container [comment]="r">
+                <app-comment-container 
+                    [comment]="r" 
+                    [isUser]="currentUser.username === r.user.username ? true : false">
                 </app-comment-container>
             </div>
             

@@ -10,6 +10,7 @@
 .content {
     margin-left: 90px;
 }
+
 .header {
     display: flex;
     margin: 0;
@@ -27,6 +28,14 @@
 .username {
     margin-left: 5px;
     margin-right: 5px;
+
+    .badge {
+        background-color: $moderate-blue;
+        padding-right: 5px;
+        padding-left: 5px;
+        color: $white;
+        font-weight: 500;
+    }
 }
 
 .time {

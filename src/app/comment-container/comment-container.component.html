@@ -11,7 +11,8 @@
       <img [src]="comment.user.image.png" alt="" class="avatar">
     </div>
     <div class="username">
-      <p> {{ comment.user.username }} </p>
+      <p> {{ comment.user.username }} <span class="badge" *ngIf="isUser">you</span></p>
+      
     </div>
     <div class="time">
       <p>1 month ago</p>

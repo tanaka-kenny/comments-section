@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CommentContainerComponent implements OnInit {
   @Input() comment: Comment | any;
+  @Input() isUser = false;
 
   constructor() { 
   }
