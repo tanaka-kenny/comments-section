@@ -44,11 +44,12 @@
     margin-left: 5px;
 }
 
-.reply {
+.actions {
     position: absolute;
     right: 15px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     
     p {
         margin-left: 5px;
@@ -64,6 +65,20 @@
         color: $soft-red;
         margin-right: 15px;
     }
+
+    .delete:hover {
+        color: $pale-red;
+    }
+
+    .edit:hover, .reply:hover, .delete:hover {
+        color: rgba($moderate-blue, .7);
+    }
+
+    .reply-icon:hover, .edit-icon:hover, .delete-icon:hover {
+        opacity: .7;
+    }
+
+
 }
 
 .comment-text {
@@ -93,6 +108,7 @@
         
         img {
             margin-left: 12px;
+            cursor: pointer;
         }
     }
 }

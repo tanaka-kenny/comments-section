@@ -17,16 +17,16 @@
     <div class="time">
       <p>1 month ago</p>
     </div>
-    <div class="reply">
+    <div class="actions">
       <ng-container *ngIf="!isUser else edit">
-        <img src="../../assets/images/icon-reply.svg" alt="">
-        <p>Reply</p>
+        <img src="../../assets/images/icon-reply.svg" alt="" class="reply-icon">
+        <p class="reply">Reply</p>
       </ng-container>
       <ng-template #edit>
-        <img src="../../assets/images/icon-delete.svg" alt="">
+        <img src="../../assets/images/icon-delete.svg" alt="" class="delete-icon">
         <p class="delete">Delete</p>
-        <img src="../../assets/images/icon-edit.svg" alt="">
-        <p>Edit</p>
+        <img src="../../assets/images/icon-edit.svg" alt="" class="edit-icon">
+        <p class="edit">Edit</p>
       </ng-template>
       
     </div>
