@@ -8,9 +8,13 @@ import { JsonDataService } from './services/json-data.service';
 })
 export class AppComponent {
   title = 'comments-section';
+  comments = [];
 
   constructor(private json: JsonDataService) {
     json.getComments()
-      .subscribe(x => console.log(x))
+      .subscribe(jsonData => {
+        this.comments = jsonData.comments;
+        console.log(this.comments)
+      })
   }
 }

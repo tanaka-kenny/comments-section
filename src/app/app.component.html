@@ -1,6 +1,6 @@
-<app-container>
-    <app-vote-element></app-vote-element>
-    <app-comment-container></app-comment-container>
+<app-container *ngFor="let c of comments">
+    <app-vote-element [voteCount]="0"></app-vote-element>
+    <app-comment-container [comment]="c"></app-comment-container>
 </app-container>
 
 <app-comment-form></app-comment-form>

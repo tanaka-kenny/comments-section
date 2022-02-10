@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-vote-element',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vote-element.component.scss']
 })
 export class VoteElementComponent implements OnInit {
+  @Input() voteCount: number;
 
-  constructor() { }
+  constructor() { 
+    this.voteCount = 0;
+  }
 
   ngOnInit(): void {
+   
   }
 
 }
