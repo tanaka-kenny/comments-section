@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CommentFormComponent implements OnInit {
   @Input() currentUser: CurrentUser;
+  @Input() btnText: string = '';
+  @Input() isReplyForm  = false;
 
   constructor() {
     this.currentUser = {

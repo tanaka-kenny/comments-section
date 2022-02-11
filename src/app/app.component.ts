@@ -22,13 +22,16 @@ export class AppComponent {
     json.getComments()
       .subscribe(jsonData => {
         this.comments = jsonData.comments;
-        this.comments.forEach(comment => comment.showReplyForm = false);
+        this.comments.forEach(comment => {
+          comment.showReplyForm = false
+          comment.replies.forEach(r => r.showReplyForm = false)
+        });
         this.currentUser = jsonData.currentUser;
         
       })
   }
 
-  showReplyForm(comment: Comment) {
+  showReplyForm(comment: Comment | any) {
     comment.showReplyForm = true;
   }
 }

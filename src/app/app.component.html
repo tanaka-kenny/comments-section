@@ -1,23 +1,36 @@
 <div class="main-area">
     <ng-container *ngFor="let c of comments">
+        <!-- main comment -->
         <div class="container-comment">
             <app-comment-container 
                 [comment]="c"
                 (reply)="showReplyForm(c)"></app-comment-container>
         </div>
         <app-comment-form [currentUser]="currentUser" 
-            *ngIf="c.showReplyForm"></app-comment-form>
+            *ngIf="c.showReplyForm"
+            [btnText]="'Reply'"></app-comment-form>
         
+            <!--  replies-->
         <ng-container *ngIf="c.replies">
-            <div class="container-reply" *ngFor="let r of c.replies">
-                <app-comment-container 
-                    [comment]="r" 
-                    [isUser]="currentUser.username === r.user.username ? true : false">
-                </app-comment-container>
-            </div>
+            <ng-container *ngFor="let r of c.replies">
+                <div class="container-reply" >
+                    <app-comment-container 
+                        [comment]="r" 
+                        [isUser]="currentUser.username === r.user.username ? true : false"
+                        (reply)="showReplyForm(r)">
+                    </app-comment-container>
+                </div>
+                <div class="container-reply">
+                    <app-comment-form [currentUser]="currentUser" 
+                        *ngIf="r.showReplyForm"
+                        [btnText]="'Reply'"
+                        [isReplyForm]="true"></app-comment-form>
+                </div>
+            </ng-container>
+            
         </ng-container>
         
     </ng-container>
     
-    <app-comment-form [currentUser]="currentUser"></app-comment-form>
+    <app-comment-form [currentUser]="currentUser" btnText="Send"></app-comment-form>
 </div>

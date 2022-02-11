@@ -27,7 +27,7 @@ export interface Comment {
   content: string;
   createdAt: string;
   id: number | string;
-  replies: any[];
+  replies: Reply[];
   score: number;
   user: {
     image: {
@@ -37,4 +37,19 @@ export interface Comment {
     username: string;
   },
   showReplyForm: boolean;
+}
+
+interface Reply {
+  id: number | string;
+  content: string;
+  score: number;
+  replyingTo: string;
+  showReplyForm: boolean;
+  user: {
+    image: {
+      png: string;
+      webp?: string;
+    },
+    username: string;
+  }
 }
