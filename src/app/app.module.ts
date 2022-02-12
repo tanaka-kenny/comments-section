@@ -6,6 +6,7 @@ import { CommentContainerComponent } from './comment-container/comment-container
 import { VoteElementComponent } from './vote-element/vote-element.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

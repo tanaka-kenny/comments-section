@@ -25,8 +25,8 @@ export class CommentContainerComponent implements OnInit {
 
 export interface Comment {
   content: string;
-  createdAt: string;
-  id: number | string;
+  createdAt: any;
+  id?: number | string;
   replies: Reply[];
   score: number;
   user: {
@@ -36,7 +36,7 @@ export interface Comment {
     }
     username: string;
   },
-  showReplyForm: boolean;
+  showReplyForm?: boolean;
 }
 
 interface Reply {

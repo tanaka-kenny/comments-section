@@ -20,9 +20,9 @@
                         (reply)="showReplyForm(r)">
                     </app-comment-container>
                 </div>
-                <div class="container-reply">
+                <div class="container-reply" *ngIf="r.showReplyForm">
                     <app-comment-form [currentUser]="currentUser" 
-                        *ngIf="r.showReplyForm"
+                        
                         [btnText]="'Reply'"
                         [isReplyForm]="true"></app-comment-form>
                 </div>

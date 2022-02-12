@@ -1,5 +1,14 @@
-<div class="elements">
-    <img [src]="currentUser.image.png" alt="" class="avatar">
-    <input type="text" id="comment-text" name="comment-text" [class]="!isReplyForm ? 'comment' : 'reply-comment'">
-    <button class="btn"> {{ btnText }} </button>
-</div>
+<form [formGroup]="form" (ngSubmit)="postComment()">
+    <div class="elements">
+        <img [src]="currentUser.image.png" alt="" class="avatar">
+        <input
+            formControlName="commentText" 
+            type="text" 
+            id="comment-text" 
+            name="comment-text" 
+            [class]="!isReplyForm ? 'comment' : 'reply-comment'">
+        <button 
+            [disabled]="!form.valid"
+            class="btn" type="submit"> {{ btnText }} </button>
+    </div>
+</form>
